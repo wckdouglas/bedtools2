@@ -337,12 +337,6 @@ void ConvertBamToBedpe(const string &bamFile,
         if (bam1.Name != bam2.Name) {
             while (bam1.Name != bam2.Name)
             {
-                if (bam1.IsPaired()) 
-                {
-                    cerr << "*****WARNING: Query " << bam1.Name
-                         << " is marked as paired, but its mate does not occur"
-                         << " next to it in your BAM file.  Skipping. " << endl;
-                }
                 bam1 = bam2;
                 reader.GetNextAlignment(bam2);
             }
